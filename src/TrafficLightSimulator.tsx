@@ -1,4 +1,20 @@
+import { useEffect, useState } from "react";
+
 function TrafficLightSimulator() {
+  const [light, setLight] = useState(0);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setLight((light + 1) % 3);
+    }, 1000);
+
+    return () => {
+      if (timeout) {
+        clearTimeout(timeout);
+      }
+    };
+  });
+
   return (
     <div
       style={{
