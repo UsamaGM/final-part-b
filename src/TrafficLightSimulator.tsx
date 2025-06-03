@@ -20,20 +20,24 @@ function TrafficLightSimulator() {
       style={{
         margin: 0,
         display: "flex",
+        flexDirection: "column",
         height: "100vh",
         justifyContent: "center",
         alignItems: "center",
         backgroundColor: "#1D1B1D",
       }}
     >
+      <p style={{ color: "white", fontFamily: "sans-serif" }}>
+        Traffic Light Simulator
+      </p>
       <div
         style={{
-          gap: 15,
           display: "flex",
           flexDirection: "column",
           backgroundColor: "#2E2D2E",
           width: "fit-content",
-          padding: "15px 25px",
+          gap: 10,
+          padding: 35,
           borderRadius: 20,
         }}
       >
@@ -42,7 +46,9 @@ function TrafficLightSimulator() {
             width: 75,
             height: 75,
             borderRadius: "50%",
-            backgroundColor: "red",
+            backgroundColor: light === 0 ? "red" : "#525152",
+            transition: "all 350ms ease-in-out",
+            boxShadow: light === 0 ? "0 0 20px red" : "",
           }}
         />
         <div
@@ -50,7 +56,9 @@ function TrafficLightSimulator() {
             width: 75,
             height: 75,
             borderRadius: "50%",
-            backgroundColor: "yellow",
+            backgroundColor: light === 1 ? "yellow" : "#525152",
+            transition: "all 350ms ease-in-out",
+            boxShadow: light === 1 ? "0 0 20px yellow" : "",
           }}
         />
         <div
@@ -58,7 +66,9 @@ function TrafficLightSimulator() {
             width: 75,
             height: 75,
             borderRadius: "50%",
-            backgroundColor: "green",
+            backgroundColor: light === 2 ? "green" : "#525152",
+            transition: "all 350ms ease-in-out",
+            boxShadow: light === 2 ? "0 0 20px green" : "",
           }}
         />
       </div>
