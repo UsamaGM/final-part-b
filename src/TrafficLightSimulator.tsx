@@ -6,7 +6,7 @@ function TrafficLightSimulator() {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setLight((light + 1) % 3);
-    }, 1000);
+    }, 3000);
 
     return () => {
       if (timeout) {
@@ -46,9 +46,9 @@ function TrafficLightSimulator() {
             width: 75,
             height: 75,
             borderRadius: "50%",
-            backgroundColor: light === 0 ? "red" : "#525152",
+            backgroundColor: light === 0 ? "#E33C35" : "#525152",
             transition: "all 350ms ease-in-out",
-            boxShadow: light === 0 ? "0 0 20px red" : "",
+            boxShadow: light === 0 ? "0 0 20px #E33C35" : "",
           }}
         />
         <div
@@ -56,9 +56,9 @@ function TrafficLightSimulator() {
             width: 75,
             height: 75,
             borderRadius: "50%",
-            backgroundColor: light === 1 ? "yellow" : "#525152",
+            backgroundColor: light === 1 ? "#FFE939" : "#525152",
             transition: "all 350ms ease-in-out",
-            boxShadow: light === 1 ? "0 0 20px yellow" : "",
+            boxShadow: light === 1 ? "0 0 20px #FFE939" : "",
           }}
         />
         <div
@@ -66,9 +66,9 @@ function TrafficLightSimulator() {
             width: 75,
             height: 75,
             borderRadius: "50%",
-            backgroundColor: light === 2 ? "green" : "#525152",
+            backgroundColor: light === 2 ? "#65CD32" : "#525152",
             transition: "all 350ms ease-in-out",
-            boxShadow: light === 2 ? "0 0 20px green" : "",
+            boxShadow: light === 2 ? "0 0 20px #65CD32" : "",
           }}
         />
       </div>
